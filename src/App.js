@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './Languages.js';
 import './Languages.css';
+import instagram from './icon/instagram-brands-solid.svg';
+import facebook from './icon/facebook-f-brands-solid.svg';
+import linkedin from './icon/linkedin-brands-solid.svg';
 
 
 function App() {
@@ -17,7 +20,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-         <h1>Logo</h1>
+         <h1>Camila Souza</h1>
           <nav className="nav-bar">
             <ul className={isMenuActive ? 'active' : ''}>
               <li><Link to="/">Home</Link></li>
@@ -25,7 +28,9 @@ function App() {
               <li><Link to="/Tratamentos">Tratamentos</Link></li>
               <li><Link to="/Exames">Exames</Link></li>
               <li><Link to="/Contato">Contato</Link></li>
-              <li><Link to="/Agende uma consulta">Agende uma consulta</Link></li>
+              <div className='agendeumaconsulta'>
+              <li><Link to="/Agende uma consulta">Agende sua consulta</Link></li>
+              </div>
             </ul>
           </nav>
           <div className="hamburger" id="hamburger" onClick={toggleMenu}>
@@ -38,7 +43,7 @@ function App() {
         <main>
         <div className="body">
           <Routes>
-            <Route path="/" element={<h2>Home</h2>} />
+            <Route path="/"/>
             <Route path="/Sobre" element={<h2>Sobre</h2>} />
             <Route path="/Tratamentos" element={<h2>Tratamentos</h2>} />
             <Route path="/Exames" element={<h2>Exames</h2>} />
@@ -48,6 +53,40 @@ function App() {
           </div>
         </main>
       </div>
+
+      <footer className="footer">
+          <div className='icons'>
+          <a href="" target="_blank" rel="noopener noreferrer"> 
+        <img src={instagram} className='instagramicon' alt='instagramicon'/></a>
+        <a href="" target="_blank" rel="noopener noreferrer">
+        <img src={facebook} className='facebookicon' alt='facebookicon'/></a>
+        <a href="" target="_blank" rel="noopener noreferrer">
+        <img src={linkedin} className='linkedinicon' alt='linkedinicon'/></a>
+        </div>
+        <h1>Dra. Camila Souza</h1>
+        <div className='categorias'>
+          <div className='categoria'>
+            <h2>Endereço</h2>
+            <p>Rua abcde 123 - Brasil, Brasil</p>
+            </div>
+            <div className='categoria'>
+            <h2>Tratamentos</h2>
+            <p>AAAAAAAA</p>
+            <p>BBBBBBBB</p>
+            <p>CCCCCCCC</p>
+            </div>
+            <div className='categoria'>
+            <h2>Exames</h2>
+            <p>EXAME 1</p>
+            <p>EXAME 2</p>
+            <p>EXAME 3</p>
+          </div>
+          </div>
+          <div className='creator'>
+          <h2>Desenvolvido por: Flippy</h2>
+          </div>
+
+        </footer>
 
     </Router>
   );
